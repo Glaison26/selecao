@@ -139,7 +139,7 @@
 <body>
     <main>
         <h1>Formulário de candidatura</h1>
-        <form method="post" action="">
+        <form method="post" action="gravar_candidatura_ia.php">
             <fieldset>
                 <legend>Dados pessoais</legend>
                 <div class="grid">
@@ -207,17 +207,17 @@
             <fieldset>
                 <legend>Experiência profissional</legend>
                 <div class="choices">
-                    <label><input type="radio" name="experiencia" value="0" required> 0 ponto – Sem experiência</label>
-                    <label><input type="radio" name="experiencia" value="2"> 2 pontos – De 1 a 365 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="4"> 4 pontos – De 366 a 730 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="6"> 6 pontos – De 731 a 1.095 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="8"> 8 pontos – De 1.096 a 1.460 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="10"> 10 pontos – De 1.461 a 1.825 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="12"> 12 pontos – De 1.826 a 2.190 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="14"> 14 pontos – De 2.191 a 2.555 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="16"> 16 pontos – De 2.556 a 2.920 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="18"> 18 pontos – De 2.921 a 3.285 dias de experiência</label>
-                    <label><input type="radio" name="experiencia" value="20"> 20 pontos – De 3.286 a 3.650 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="0 ponto – Sem experiência" required> 0 ponto – Sem experiência</label>
+                    <label><input type="radio" name="experiencia" value="2 pontos – De 1 a 365 dias de experiência"> 2 pontos – De 1 a 365 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="4 pontos – De 366 a 730 dias de experiência"> 4 pontos – De 366 a 730 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="6 pontos – De 731 a 1.095 dias de experiência"> 6 pontos – De 731 a 1.095 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="8 pontos – De 1.096 a 1.460 dias de experiência"> 8 pontos – De 1.096 a 1.460 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="10 pontos – De 1.461 a 1.825 dias de experiência"> 10 pontos – De 1.461 a 1.825 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="12 pontos – De 1.826 a 2.190 dias de experiência"> 12 pontos – De 1.826 a 2.190 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="14 pontos – De 2.191 a 2.555 dias de experiência"> 14 pontos – De 2.191 a 2.555 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="16 pontos – De 2.556 a 2.920 dias de experiência"> 16 pontos – De 2.556 a 2.920 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="18 pontos – De 2.921 a 3.285 dias de experiência"> 18 pontos – De 2.921 a 3.285 dias de experiência</label>
+                    <label><input type="radio" name="experiencia" value="20 pontos – De 3.286 a 3.650 dias de experiência"> 20 pontos – De 3.286 a 3.650 dias de experiência</label>
                 </div>
             </fieldset>
             <fieldset>
@@ -225,6 +225,8 @@
                 <label class="declaration"><input type="checkbox" name="declaracao_verdadeira" value="1" required> Declaro que as informações prestadas são verdadeiras e serão comprovadas no ato da Convocação, sob pena de eliminação.</label>
             </fieldset>
             <button type="submit">Gravar informações</button>
+            <!-- botão para voltar a página anterior -->
+            <button type="button" onclick="history.back()">Voltar</button>
         </form>
     </main>
 </body>

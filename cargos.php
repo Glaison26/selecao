@@ -3,16 +3,29 @@
 // chamo cadastro_ia para preencher o formulário com os dados do candidato
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Recebe os dados do formulário
-    $cargo = $_POST['cargo'] ?? '';
-    $zona = $_POST['zona'] ?? '';
-
+  
     // Armazena os dados em variáveis de sessão para uso posterior
     session_start();
-    $_SESSION['cargo'] = $cargo;
-    $_SESSION['zona'] = $zona;
+    $_SESSION['cargo'] = $_POST['cargo'] ?? '';
+    $_SESSION['zona'] = $_POST['zona'] ?? '';
 
-    // Redireciona para o próximo passo (cadastro_ia.php)
-    header('Location: cadastro_ia.php');
+    // Redireciona para o próximo passo (cadastro_ia.php) se foi selecionado primeiro cargo do do combobox de cargos
+	if ($_SESSION['cargo'] === 'Professor de Educação Básica - Séries Iniciais / Finais') {
+		header('Location: cadastro_ia.php');
+		exit();
+	}
+	// redireciona para o próximo passo (cadastro_ib.php) se foi selecionado segundo cargo do do combobox de cargos
+	if ($_SESSION['cargo'] === 'Especialista de Educação Básica') {	
+		header('Location: cadastro_ib.php');
+		exit();
+	}
+	// redireciona para o próximo passo (cadastro_ic.php) se foi selecionado terceiro cargo do do combobox de cargos
+	if ($_SESSION['cargo'] === 'Analista de Educação Básica') {
+		header('Location: cadastro_ic.php');
+		exit();
+	}
+	
+    
     exit();
 }
 ?>
@@ -43,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<label for="cargo">Selecione o cargo pretendido:</label>
 				<select id="cargo" name="cargo" required>
 					<option value="">Selecione</option>
-					<option value="professor">Professor de Educação Básica - Séries Iniciais / Finais</option>
-					<option value="especialista">Especialista de Educação Básica</option>
-					<option value="analista">Analista de Educação Básica</option>
+					<option value="Professor de Educação Básica - Séries Iniciais / Finais">Professor de Educação Básica - Séries Iniciais / Finais</option>
+					<option value="Especialista de Educação Básica">Especialista de Educação Básica</option>
+					<option value="Analista de Educação Básica">Analista de Educação Básica</option>
 				</select>
 				<p class="aviso">Nível de escolaridade: Nível Superior</p>
 			</fieldset>
@@ -62,8 +75,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				</div>
 			</fieldset>
 
-			<!-- butão para chamar o proximo passo no arquivo cadastro_ia.php -->
+			,<!-- butão para chamar o proximo passo no arquivo cadastro_ia.php -->
             <button type="submit">Próximo Passo</button>
+			<!-- botão para voltar a página anterior -->
+			<button type="button" onclick="history.back()">Voltar</button>
 
 		</form>
 	</main>
