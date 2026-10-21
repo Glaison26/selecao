@@ -19,25 +19,6 @@
 CREATE DATABASE IF NOT EXISTS `selecao` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `selecao`;
 
--- Copiando estrutura para tabela selecao.app
-CREATE TABLE IF NOT EXISTS `app` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(150) DEFAULT NULL,
-  `email` varchar(150) DEFAULT NULL,
-  `cpf` varchar(14) DEFAULT NULL,
-  `rg` varchar(30) DEFAULT NULL,
-  `endereco` varchar(180) DEFAULT NULL,
-  `datanasc` date DEFAULT NULL,
-  `telefone` varchar(15) DEFAULT NULL,
-  `pos_graduacao` varchar(30) DEFAULT NULL,
-  `mestrado` varchar(3) DEFAULT NULL,
-  `doutorado` varchar(3) DEFAULT NULL,
-  `experiencia_tempo` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Copiando dados para a tabela selecao.app: ~0 rows (aproximadamente)
-
 -- Copiando estrutura para tabela selecao.cadastro_ia
 CREATE TABLE IF NOT EXISTS `cadastro_ia` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -55,13 +36,13 @@ CREATE TABLE IF NOT EXISTS `cadastro_ia` (
   `doutorado` char(3) DEFAULT NULL,
   `selecao_vaga` varchar(150) DEFAULT NULL,
   `experiencia` varchar(150) DEFAULT NULL,
+  `cargo_final` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela selecao.cadastro_ia: ~0 rows (aproximadamente)
-INSERT INTO `cadastro_ia` (`id`, `zona`, `email`, `cpf`, `nome`, `rg`, `endereco`, `data_nasc`, `telefone`, `cargo`, `pos_graduacao`, `mestrado`, `doutorado`, `selecao_vaga`, `experiencia`) VALUES
-	(4, 'rural', 'glaison26.queiroz@gmail.com', '695.510.226-53', 'Glaison Queiroz', 'M4662097 ssp/mg', 'Rua da Intendência, 316', '1968-10-26', '36712550', 'Especialista de Educação Básica', 'uma', 'sim', 'sim', 'ampla_concorrencia', '4 pontos – De 366 a 730 dias de experiência'),
-	(5, 'urbana', 'glaison26.queiroz@gmail.com', '695.510.226-53', 'Glaison Queiroz', 'M4662097 ssp/mg', 'Rua da Intendência', '1968-10-26', '36712550', 'Analista de Educação Básica', 'duas', 'sim', 'sim', 'ampla_concorrencia', '20 pontos – De 3.286 a 3.650 dias de experiência');
+-- Copiando dados para a tabela selecao.cadastro_ia: ~2 rows (aproximadamente)
+INSERT INTO `cadastro_ia` (`id`, `zona`, `email`, `cpf`, `nome`, `rg`, `endereco`, `data_nasc`, `telefone`, `cargo`, `pos_graduacao`, `mestrado`, `doutorado`, `selecao_vaga`, `experiencia`, `cargo_final`) VALUES
+	(10, 'urbana', 'teste@gmail.com', '69551022653', 'Glaison Queiroz', '4465465', 'Rua da Intendencia 316', '2000-10-26', '+553198545555', 'Professor de Educação Básica - Séries Iniciais / Finais', 'nenhuma', 'sim', 'sim', 'ampla_concorrencia', '10 pontos – De 1.461 a 1.825 dias de experiência', 'Professor de Educação Básica – Séries Finais – Ciências Biológicas');
 
 -- Copiando estrutura para tabela selecao.cadastro_ib
 CREATE TABLE IF NOT EXISTS `cadastro_ib` (
@@ -81,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `cadastro_ib` (
   `pos_graduacao` varchar(7) DEFAULT NULL,
   `selecao_vaga` varchar(150) DEFAULT NULL,
   `experiencia` varchar(150) DEFAULT NULL,
+  `cargo_final` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -101,6 +83,7 @@ CREATE TABLE IF NOT EXISTS `cadastro_ic` (
   `ensino_medio` char(3) DEFAULT NULL,
   `selecao_vaga` varchar(120) DEFAULT NULL,
   `experiencia` varchar(120) DEFAULT NULL,
+  `cargo_final` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
