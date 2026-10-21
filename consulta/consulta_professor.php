@@ -37,8 +37,12 @@ $result = $conection->query($sql);
 
 <body>
     <!-- Botão para exportar para Excel -->
-
-    <a href="gera_xls_ia.php" class="btn btn-success mb-3">Exportar para Excel</a>
+    <!-- margem esquerda e no topo -->
+     <div class="d-flex justify-content-start mb-3">
+    
+        <a href="gera_xls_ia.php" class="btn btn-success mb-3">Exportar para Excel</a>
+     </div>
+   
 
     <div class="container-fluid">
 
@@ -56,7 +60,8 @@ $result = $conection->query($sql);
                     <th>RG</th>
                     <th>endereco</th>
                     <th>telefone</th>
-                    <th>Cargo</th>
+                    <th>Tipo de Cargo</th>
+                    <th>Cargo Pretendido</th>
                     <th>Pos Graduação</th>
                     <th>Doutorado</th>
                     <th>Mestrado</th>
@@ -86,6 +91,7 @@ $result = $conection->query($sql);
                         <td>$c_linha[endereco]</td>
                         <td>$c_linha[telefone]</td>
                         <td>$c_linha[cargo]</td>
+                        <td>$c_linha[cargo_final]</td>
                         <td>$c_linha[pos_graduacao]</td>
                         <td>$c_linha[doutorado]</td>
                         <td>$c_linha[mestrado]</td>

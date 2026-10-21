@@ -20,7 +20,7 @@ $resultado = fopen("php://output", 'w');
 // faço a Leitura da tabela com sql
 
 $cabecalho = [
-   'ID', 'Zona', 'e-mail', 'CPF', 'nome', 'RG',  'endereco', 'Data de Nascimento','telefone', 'Cargo', 'Pos Graduação', 'Doutorado', 'Mestrado', 'Seleção da Vaga'
+   'ID', 'Zona', 'e-mail', 'CPF', 'nome', 'RG',  'endereco', 'Data de Nascimento','telefone', 'Cargo', 'Pos Graduação', 'Doutorado', 'Mestrado', 'Seleção da Vaga', 'Cargo Pretendido'
 ];
 
 $cabecalho = mb_convert_encoding($cabecalho, "ISO-8859-1", "UTF-8");

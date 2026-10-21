@@ -134,6 +134,34 @@
             }
         }
     </style>
+    <!-- função java script para máscara de telefone e cpf -->
+    <script>
+        function formatarTelefone(input) {
+            let telefone = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            if (telefone.length > 10) {
+                telefone = telefone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+            } else if (telefone.length > 5) {
+                telefone = telefone.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+            } else if (telefone.length > 2) {
+                telefone = telefone.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+            } else {
+                telefone = telefone.replace(/^(\d*)/, '($1');
+            }
+            input.value = telefone;
+        }
+
+        function formatarCPF(input) {
+            let cpf = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            if (cpf.length > 9) {
+                cpf = cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{0,2}).*/, '$1.$2.$3-$4');
+            } else if (cpf.length > 6) {
+                cpf = cpf.replace(/^(\d{3})(\d{3})(\d{0,3}).*/, '$1.$2.$3');
+            } else if (cpf.length > 3) {
+                cpf = cpf.replace(/^(\d{3})(\d{0,3})/, '$1.$2');
+            }
+            input.value = cpf;
+        }
+    </script>
 </head>
 
 <body>
@@ -144,10 +172,10 @@
                 <legend>Dados pessoais</legend>
                 <div class="grid">
                     <div class="field"><label for="email">E-mail</label><input type="email" id="email" name="email" autocomplete="email" required></div>
-                    <div class="field"><label for="cpf">CPF</label><input type="text" id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required></div>
+                    <div class="field"><label for="cpf">CPF</label><input type="text" onkeyup="formatarCPF(this)" id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required></div>
                     <div class="field full"><label for="nome_completo">Nome completo</label><input type="text" id="nome_completo" name="nome_completo" autocomplete="name" required></div>
                     <div class="field"><label for="rg">RG</label><input type="text" id="rg" name="rg" required></div>
-                    <div class="field"><label for="telefone">Telefone</label><input type="tel" id="telefone" name="telefone" autocomplete="tel" required></div>
+                    <div class="field"><label for="telefone">Telefone</label><input type="tel" onkeyup="formatarTelefone(this)" id="telefone" name="telefone" autocomplete="tel" required></div>
                     <div class="field full"><label for="endereco">Endereço</label><input type="text" id="endereco" name="endereco" autocomplete="street-address" required></div>
 
 
@@ -197,11 +225,11 @@
             <fieldset>
                 <legend>Seleção da vaga para a qual se candidata</legend>
                 <div class="choices">
-                    <label><input type="radio" name="modalidade_vaga" value="ampla_concorrencia" required> Ampla concorrência</label>
-                    <label><input type="radio" name="modalidade_vaga" value="pretos_pardos"> Vagas reservadas para candidatos autodeclarados pretos/pardos</label>
-                    <label><input type="radio" name="modalidade_vaga" value="quilombolas"> Vagas reservadas para candidatos quilombolas</label>
-                    <label><input type="radio" name="modalidade_vaga" value="indigenas"> Vagas reservadas para candidatos indígenas</label>
-                    <label><input type="radio" name="modalidade_vaga" value="pessoa_com_deficiencia"> Vagas reservadas para pessoas com deficiência</label>
+                    <label><input type="radio" name="modalidade_vaga" value="Ampla concorrência" required> Ampla concorrência</label>
+                    <label><input type="radio" name="modalidade_vaga" value="Vagas reservadas para candidatos autodeclarados pretos/pardos"> Vagas reservadas para candidatos autodeclarados pretos/pardos</label>
+                    <label><input type="radio" name="modalidade_vaga" value="Vagas reservadas para candidatos quilombolas"> Vagas reservadas para candidatos quilombolas</label>
+                    <label><input type="radio" name="modalidade_vaga" value="Vagas reservadas para candidatos indígenas"> Vagas reservadas para candidatos indígenas</label>
+                    <label><input type="radio" name="modalidade_vaga" value="Vagas reservadas para pessoas com deficiência"> Vagas reservadas para pessoas com deficiência</label>
                 </div>
             </fieldset>
             <fieldset>
