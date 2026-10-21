@@ -155,27 +155,27 @@
 
 
                         <label for="cargo">Cargo</label>
-                        <select id="cargo" name="cargo" required>
+                        <select id="cargo_final" name="cargo_final" required>
                             <option value="" selected disabled>Selecione um cargo</option>
-                            <option>Professor de Educação Básica – Séries Iniciais</option>
-                            <option>Professor de Educação Básica – Séries Finais - Matemática</option>
-                            <option>Professor de Educação Básica – Séries Finais – Letras/Língua Portuguesa</option>
-                            <option>Professor de Educação Básica – Séries Finais – Letras / Inglês</option>
-                            <option>Professor de Educação Básica – Séries Finais - Educação Física</option>
-                            <option>Professor de Educação Básica – Séries Finais – Geografia</option>
-                            <option>Professor de Educação Básica – Séries Finais - História</option>
-                            <option>Professor de Educação Básica – Séries Finais – Ciências Biológicas</option>
-                            <option>Professor de Educação Básica – Séries Finais – Educação Religiosa</option>
-                            <option>Professor de Educação Básica – Séries Finais – Artes</option>
-                            <option>Professor de Educação Básica – Instrutor de Libras</option>
-                            <option>Professor de Educação Básica – Tradutor / Intérprete de Libras</option>
-                            <option>Especialista de Educação Básica – Pedagogo</option>
-                            <option>Analista de Educação Básica – Assistente Social</option>
-                            <option>Analista de Educação Básica – Contador</option>
-                            <option>Analista de Educação Básica – Fonoaudiólogo</option>
-                            <option>Analista de Educação Básica – Inspetor Escolar</option>
-                            <option>Analista de Educação Básica - Nutricionista</option>
-                            <option>Analista de Educação Básica – Psicólogo</option>
+                            <option value="Professor de Educação Básica – Séries Iniciais">Professor de Educação Básica – Séries Iniciais</option>
+                            <option value="Professor de Educação Básica – Séries Finais - Matemática">Professor de Educação Básica – Séries Finais - Matemática</option>
+                            <option value="Professor de Educação Básica – Séries Finais – Letras/Língua Portuguesa">Professor de Educação Básica – Séries Finais – Letras/Língua Portuguesa</option>
+                            <option value="Professor de Educação Básica – Séries Finais – Letras / Inglês">Professor de Educação Básica – Séries Finais – Letras / Inglês</option>
+                            <option value="Professor de Educação Básica – Séries Finais - Educação Física">Professor de Educação Básica – Séries Finais - Educação Física</option>
+                            <option value="Professor de Educação Básica – Séries Finais – Geografia">Professor de Educação Básica – Séries Finais – Geografia</option>
+                            <option value="Professor de Educação Básica – Séries Finais - História">Professor de Educação Básica – Séries Finais - História</option>
+                            <option value="Professor de Educação Básica – Séries Finais – Ciências Biológicas">Professor de Educação Básica – Séries Finais – Ciências Biológicas</option>
+                            <option value="Professor de Educação Básica – Séries Finais – Educação Religiosa">Professor de Educação Básica – Séries Finais – Educação Religiosa</option>
+                            <option value="Professor de Educação Básica – Séries Finais – Artes">Professor de Educação Básica – Séries Finais – Artes</option>
+                            <option value="Professor de Educação Básica – Instrutor de Libras">Professor de Educação Básica – Instrutor de Libras</option>
+                            <option value="Professor de Educação Básica – Tradutor / Intérprete de Libras">Professor de Educação Básica – Tradutor / Intérprete de Libras</option>
+                            <option value="Especialista de Educação Básica – Pedagogo">Especialista de Educação Básica – Pedagogo</option>
+                            <option value="Analista de Educação Básica – Assistente Social">Analista de Educação Básica – Assistente Social</option>
+                            <option value="Analista de Educação Básica – Contador">Analista de Educação Básica – Contador</option>
+                            <option value="Analista de Educação Básica – Fonoaudiólogo">Analista de Educação Básica – Fonoaudiólogo</option>
+                            <option value="Analista de Educação Básica – Inspetor Escolar">Analista de Educação Básica – Inspetor Escolar</option>
+                            <option value="Analista de Educação Básica - Nutricionista">Analista de Educação Básica - Nutricionista</option>
+                            <option value="Analista de Educação Básica – Psicólogo">Analista de Educação Básica – Psicólogo</option>
                         </select>
                     </div>
                     <div class="field"><label for="data_nascimento">Data de nascimento</label><input type="date" id="data_nascimento" name="data_nascimento" required></div>

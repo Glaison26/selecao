@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $telefone = $_POST['telefone'] ?? '';
     $endereco = $_POST['endereco'] ?? '';
+    $cargo_final = $_POST['cargo_final'] ?? '';
     
     $pos_graduacao = $_POST['pos_graduacao'] ?? '';
     $experiencia = $_POST['experiencia'] ?? '';
@@ -37,9 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
     // rotina para gravação dos dados no banco de dados
-    $sql = "INSERT INTO cadastro_ia (nome, cpf, rg, data_nasc, email, telefone, endereco, cargo, zona, pos_graduacao, experiencia, selecao_vaga, mestrado, doutorado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO cadastro_ia (nome, cpf, rg, data_nasc, email, telefone, endereco, cargo, zona, pos_graduacao, experiencia, selecao_vaga, mestrado, doutorado, cargo_final)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conection->prepare($sql);
-    $stmt->bind_param("ssssssssssssss", $nome, $cpf, $rg, $data_nascimento, $email, $telefone, $endereco, $cargo, $zona, $pos_graduacao, $experiencia, $selecao, $mestrado, $doutorado);
+    $stmt->bind_param("sssssssssssssss", $nome, $cpf, $rg, $data_nascimento, $email, $telefone, $endereco, $cargo, $zona, $pos_graduacao, $experiencia, $selecao, $mestrado, $doutorado, $cargo_final);
     if ($stmt->execute()) {
         // chamo página com mensagem e sucesso e link para voltar a página inicial
         header('Location: sucesso.php');
