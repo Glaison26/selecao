@@ -43,7 +43,7 @@
 			<p class="categoria">Secretaria Municipal de Educação</p>
 			<h1 id="titulo">Processo Seletivo</h1>
 			<p class="introducao">Bem-vindo(a) à página de inscrição do processo seletivo da Secretaria Municipal de Educação da Prefeitura Municipal de Sabará.</p>
-			<a class="botao" href="cadastro.php">Iniciar cadastro <span aria-hidden="true">→</span></a>
+			<a class="botao" href="cargos.php">Iniciar cadastro <span aria-hidden="true">→</span></a>
 		</section>
 		<section class="informacoes" aria-label="Informações sobre o processo seletivo">
 			<article class="cartao">
