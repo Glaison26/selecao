@@ -10,17 +10,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['zona'] = $_POST['zona'] ?? '';
 
     // Redireciona para o próximo passo (cadastro_ia.php) se foi selecionado primeiro cargo do do combobox de cargos
-	if ($_SESSION['cargo'] === 'Professor de Educação Básica - Séries Iniciais / Finais') {
+	if ($_SESSION['cargo'] === '01') {
 		header('Location: cadastro_ia.php');
 		exit();
 	}
 	// redireciona para o próximo passo (cadastro_ib.php) se foi selecionado segundo cargo do do combobox de cargos
-	if ($_SESSION['cargo'] === 'Especialista de Educação Básica') {	
+	if ($_SESSION['cargo'] === '02') {	
 		header('Location: cadastro_ib.php');
 		exit();
 	}
 	// redireciona para o próximo passo (cadastro_ic.php) se foi selecionado terceiro cargo do do combobox de cargos
-	if ($_SESSION['cargo'] === 'Analista de Educação Básica') {
+	if ($_SESSION['cargo'] === '03') {
 		header('Location: cadastro_ic.php');
 		exit();
 	}
@@ -56,9 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				<label for="cargo">Selecione o cargo pretendido:</label>
 				<select id="cargo" name="cargo" required>
 					<option value="">Selecione</option>
-					<option value="Professor de Educação Básica - Séries Iniciais / Finais">Professor de Educação Básica - Séries Iniciais / Finais</option>
-					<option value="Especialista de Educação Básica">Especialista de Educação Básica</option>
-					<option value="Analista de Educação Básica">Analista de Educação Básica</option>
+					<option value="01">
+						Nivel Superior : Professor de Educação Básica para Séries Iniciais/ Finais - Especialista de Educação Básica - Analista de Educação Básica</option>
+					<option value="02">Nivel Médio : Agente Administrativo Escolar - Agente de Apoio à Educação Infantil</option>
+					<option value="03">Nivel fundamental : Agente de Merenda Escolar - Agente de Limpeza Escolar
+
+Ajudante Geral</option>
 				</select>
 				<p class="aviso">Nível de escolaridade: Nível Superior</p>
 			</fieldset>
